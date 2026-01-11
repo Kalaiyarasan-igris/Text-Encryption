@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Text Encryption & Decryption</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="secure-app">
+
+    <header class="top-bar">
+        <h1>SECURE TEXT SYSTEM</h1>
+        <span class="status">● SECURED</span>
+    </header>
+
+    <div class="content">
+
+        <!-- ENCRYPTION MODULE -->
+        <section class="card encrypt-card">
+            <h2>TEXT ENCRYPTION</h2>
+            <textarea id="encryptInput" placeholder="Enter plain text..."></textarea>
+            <div class="actions">
+                <button onclick="encryptText()" class="primary">ENCRYPT</button>
+            </div>
+            <textarea id="encryptOutput" placeholder="Encrypted text..." readonly></textarea>
+            <p id="encryptStatus"></p>
+        </section>
+
+        <!-- DECRYPTION MODULE -->
+        <section class="card decrypt-card">
+            <h2>TEXT DECRYPTION</h2>
+            <textarea id="decryptInput" placeholder="Enter encrypted text..."></textarea>
+            <div class="actions">
+                <button onclick="decryptText()" class="secondary">DECRYPT</button>
+            </div>
+            <textarea id="decryptOutput" placeholder="Decrypted text..." readonly></textarea>
+            <p id="decryptStatus"></p>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        Secure Channel Active
+        <span class="pulse"></span>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
