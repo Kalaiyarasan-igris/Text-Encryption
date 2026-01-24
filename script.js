@@ -48,6 +48,35 @@ async function encryptText() {
     setTimeout(() => document.getElementById("encryptStatus").textContent = "", 2000);
 }
 
+/* ===== SHARE FUNCTION ===== */
+async function shareEncryptedText() {
+    const encryptedText = document.getElementById("encryptOutput").value;
+
+    if (!encryptedText) {
+        alert("Encrypt text before sharing!");
+        return;
+    }
+
+    // If Web Share API is supported (mobile browsers)
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: "Encrypted Message",
+                text: encryptedText,
+                url: window.location.href
+            });
+        } catch (err) {
+            console.error("Share cancelled or failed:", err);
+        }
+    } else {
+        // Fallback: copy to clipboard
+        navigator.clipboard.writeText(encryptedText).then(() => {
+            alert("Sharing not supported. Encrypted text copied ✔");
+        });
+    }
+}
+
+
 /* ===== DECRYPT TEXT ===== */
 async function decryptText() {
     const input = document.getElementById("decryptInput").value;
