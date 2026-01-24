@@ -130,3 +130,36 @@ canvas {
     left: 0;
     z-index: -1;
 }
+
+.share-container {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.social-icons {
+  margin-top: 10px;
+  display: none;
+  gap: 10px;
+}
+
+.social-icons a {
+  padding: 8px 12px;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.social-icons a:hover {
+  background: #0056b3;
+}
+
+#shareBtn {
+  padding: 8px 12px;
+  background: #06fa6c;
+  color: rgb(251, 253, 253);
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
